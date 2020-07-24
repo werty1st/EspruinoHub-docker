@@ -2,10 +2,7 @@ version: "3.7"
 
 services:
   hub:
-    image: werty1st/espruinohub
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: werty1st/espruinohub:latest
     restart: always
     privileged: true
     environment:

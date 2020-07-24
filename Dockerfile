@@ -1,10 +1,17 @@
-#FROM ${ARCH}debian:buster-slim
 FROM ${ARCH}node:lts-buster-slim
-
-LABEL Maintainer="werty1st"
 
 ARG UID=1000
 ARG GID=1000
+
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL Maintainer="https://github.com/werty1st"
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-url="https://github.com/werty1st/EspruinoHub-docker.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.schema-version="1.0.0-rc1"
 
 WORKDIR /home/pi/EspruinoHub
 
