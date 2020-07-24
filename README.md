@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/werty1st/espruinohub.svg)](https://microbadger.com/images/werty1st/espruinohub "Get your own image badge on microbadger.com")
+
 # Motivation
 
 I wanted to have a faster way to get EspruinoHub and EspruinoWebIDE running on my Raspberries.

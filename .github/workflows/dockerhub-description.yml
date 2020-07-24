@@ -7,13 +7,19 @@ on:
       - README.md
       - .github/workflows/dockerhub-description.yml
 jobs:
-  dockerHubDescription:
+  PushContainerReadme:
     runs-on: ubuntu-latest
+    name: Push README to Docker Hub
     steps:
-    - uses: actions/checkout@v2
-    - name: Docker Hub Description
-      uses: peter-evans/dockerhub-description@v2
-      env:
-        DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        DOCKERHUB_REPOSITORY: peterevans/dockerhub-description
+      - name: git checkout
+        uses: actions/checkout@v2
+      - name: push README to Dockerhub
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKER_LOGIN_PASSWORD }}
+        with:
+          destination_container_repo: werty1st/espruinohub
+          provider: dockerhub
+          short_description: ''
+          readme_file: 'README.md'
