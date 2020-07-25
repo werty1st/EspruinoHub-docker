@@ -52,7 +52,7 @@ docker run -it --rm \
     --privileged \
     --network=host \
     --volume=/dev:/dev \
-    werty1st/espruinowebide:latest
+    werty1st/espruinohub:latest
 ```
 
 ### docker-compose.yml
@@ -62,7 +62,7 @@ version: "3.7"
 
 services:
   ide:
-    image: werty1st/espruinowebide:latest
+    image: werty1st/espruinohub:latest
     restart: always
     privileged: true
     environment:
